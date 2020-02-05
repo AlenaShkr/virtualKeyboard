@@ -1,17 +1,3 @@
-// function createBlock() {
-//   const block = document.createElement('div');
-//   block.className = 'row';
-//   const btnValue = ['Esc', 'F1', 'F2', 'F3', 'F4', 'F5', 'F6', '`',
-// 1, 2, 3, 4, // 5, 6, 7, 8, 9, 0, '-', '=', 'bsp',
-//     'Tab', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '[', ']',
-// '|', //'CPS', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';'];
-//   const len = btnValue.length;
-//   for (let i = 0; i < len; i += 1) {
-//     block.innerHTML += `<div class="button">${btnValue[i]}</div>`;
-//   }
-//   return block;
-// }
-
 window.onload = function load() {
   const textField = document.createElement('textarea');
   textField.className = 'text';
@@ -49,13 +35,4 @@ window.onload = function load() {
       textField.value += event.toElement.value;
     });
   });
-
-  // const keyboard = document.createElement('div');
-  // keyboard.className = 'keyboard';
-  // const block = createBlock();
-  // keyboard.appendChild(block);
-
-  // document.body.appendChild(keyboard);
-
-  // keyboard.addEventListener('click', clickButton);
 };
