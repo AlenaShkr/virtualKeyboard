@@ -9,8 +9,8 @@ window.onload = function load() {
   const valueKeyEng = [
     ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'bsp'],
     ['tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '|'],
-    ['caps', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", 'ent', ''],
-    ['shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', 'shift', 'up'],
+    ['caps', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', `'`, 'ent', ''],
+    ['shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', 'shift', 'up',''],
     ['ctrl', 'fn', 'win', 'alt', 'gap', 'alt', 'list', 'ctl', '', '', '', '<-', 'down', '->']];
 
   const valueKeyRus = [
@@ -39,14 +39,17 @@ window.onload = function load() {
   }
   document.body.appendChild(keyboard);
 
-  window.addEventListener('keydown', (event) => {
+  window.addEventListener('keyup', (event) => {
+    if (event.key === 'Tab')
+    textField.value += '   ';
+    if (event.key !== 'Control'& 'Shift' & 'Tab')
     textField.value += event.key;
   });
 
   const btn = document.querySelectorAll('button');
   btn.forEach((el) => {
     el.addEventListener('click', (event) => {
-      textField.value += event.toElement.value;
+      textField.value += event.target.value;
     });
   });
 };
