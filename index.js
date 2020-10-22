@@ -5,6 +5,7 @@ window.onload = function load() {
 
   const keyboard = document.createElement('div');
   keyboard.className = 'keyboard';
+  
   const valueKeyEng = [
     ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'bsp'],
     ['tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '|'],
@@ -16,7 +17,7 @@ window.onload = function load() {
     ['ё', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'bsp'],
     ['tab', 'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ', '|'],
     ['caps', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'ent', ''],
-    ['shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '.', 'shift', 'up'],
+    ['shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '.', 'shift', 'up',''],
     ['ctrl', 'fn', 'win', 'alt', 'gap', 'alt', 'list', 'ctl', '', '', '', '<-', 'down', '->']];
 
   const objectLang = {
@@ -26,12 +27,14 @@ window.onload = function load() {
 
   for (let i = 0; i < 5; i += 1) {
     for (let j = 0; j < 14; j += 1) {
-      const btn = document.createElement('button');
+      if (objectLang.rus[i][j] !=='') {
+        const btn = document.createElement('button');
       btn.className = 'button';
 
       btn.innerHTML = objectLang.rus[i][j];
       btn.value = objectLang.rus[i][j];
       keyboard.appendChild(btn);
+      }
     }
   }
   document.body.appendChild(keyboard);
