@@ -30,10 +30,10 @@ function drawButtons(keyboard, lang) {
 }
 function redrawButtons(keyboard, lang) {
   const buttons = keyboard.querySelectorAll('.button');
-  let result = [].concat(...objectLang[lang]);
-  for (let i = 0; i < buttons.length; i ++) {
-  buttons[i].innerText = result[i];
-  buttons[i].value = result[i];
+  const result = [].concat(...objectLang[lang]);
+  for (let i = 0; i < buttons.length; i += 1) {
+    buttons[i].innerText = result[i];
+    buttons[i].value = result[i];
   }
 }
 window.onload = function load() {
@@ -56,25 +56,27 @@ window.onload = function load() {
   sectionChoiceLang.appendChild(labelForCheckbox);
   keyboard.appendChild(sectionChoiceLang);
   let lang = 'rus';
-  
-  drawButtons(keyboardButton, lang); 
-  keyboard.appendChild(keyboardButton); 
+
+  drawButtons(keyboardButton, lang);
+  keyboard.appendChild(keyboardButton);
   document.body.appendChild(keyboard);
   checkboxChoiceLang.addEventListener('click', () => {
     lang = 'rus';
-     if(checkboxChoiceLang.checked) {
-    lang = 'eng';
-  }
+    if (checkboxChoiceLang.checked) {
+      lang = 'eng';
+    }
     redrawButtons(keyboardButton, lang);
   });
   window.addEventListener('keydown', (event) => {
     textField.value += event.key;
   });
   window.addEventListener('keyup', (event) => {
-    if (event.key === 'Tab')
-    textField.value += '\t';
-    if (event.key !== 'Control'& 'Shift' & 'Tab')
-    textField.value += event.key;
+    if (event.key === 'Tab') {
+      textField.value += '\t';
+    }
+    if (event.key !== 'Control' || 'Shift' || 'Tab') {
+      textField.value += event.key;
+    }
   });
 
   const btn = document.querySelectorAll('button');
