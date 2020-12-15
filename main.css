@@ -35,6 +35,12 @@ body {
     color: darkgreen;
     animation: fly 0.5s ease-out infinite;
   }
+
+.button:focus {
+  outline-color: blue;
+  outline-style: inset;
+  animation: flyBorder 0.5s ease-out infinite;
+}
   
   @keyframes fly {
     20% {
@@ -44,7 +50,16 @@ body {
       box-shadow: -5px 5px 15px -2px blue, 5px 5px 15px 2px green;
     }
   }
-  
+
+  @keyframes flyBorder {
+    50% {
+      outline-width: 50%;
+      outline-color: green;
+    }
+    100% {
+      outline-width: 100%;
+  }
+}
   .text {
     width: 80%;
     height: 50px;
