@@ -32,6 +32,10 @@ window.onload = function load() {
         lang = 'eng';
         checkboxChoiceLang.checked = true;
         redrawButtons(keyboardButton, lang);
+      } else if (event.key.charCodeAt(0) >= 1072 && lang === 'eng') {
+        lang = 'rus';
+        checkboxChoiceLang.checked = false;
+        redrawButtons(keyboardButton, lang);
       }
       textField.value += event.key;
     }
