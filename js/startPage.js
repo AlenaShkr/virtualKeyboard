@@ -32,11 +32,13 @@ function drawStartPage() {
   sectionChoiceLang.appendChild(checkboxChoiceLang);
   sectionChoiceLang.appendChild(labelForCheckbox);
   keyboard.appendChild(sectionChoiceLang);
+
   const lang = 'rus';
 
   drawButtons(keyboardButton, lang);
   keyboard.appendChild(keyboardButton);
   document.body.appendChild(keyboard);
+
   return { textField, checkboxChoiceLang, keyboardButton };
 }
 

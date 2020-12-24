@@ -21,11 +21,10 @@ window.onload = function load() {
     }
     redrawButtons(keyboardButton, lang);
   });
-  window.addEventListener('keydown', (event) => {
-    textField.value += event.key;
-  });
-  window.addEventListener('keyup', (event) => {
+  window.addEventListener('keypress', (event) => {
+    event.preventDefault();
     if (event.key === 'Tab') {
+      event.preventDefault();
       textField.value += '\t';
     }
     if (event.key !== 'Control' && 'Shift' && 'Tab') {
