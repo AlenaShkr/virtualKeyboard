@@ -28,11 +28,11 @@ window.onload = function load() {
       textField.value += '\t';
     }
     if (event.key !== 'Control' && 'Shift' && 'Tab') {
-      if (event.key.charCodeAt(0) < 1072 && lang === 'rus') {
+      if (event.key.charCodeAt(0) < 1040 && lang === 'rus') {
         lang = 'eng';
         checkboxChoiceLang.checked = true;
         redrawButtons(keyboardButton, lang);
-      } else if (event.key.charCodeAt(0) >= 1072 && lang === 'eng') {
+      } else if (event.key.charCodeAt(0) >= 1040 && lang === 'eng') {
         lang = 'rus';
         checkboxChoiceLang.checked = false;
         redrawButtons(keyboardButton, lang);
