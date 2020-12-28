@@ -1,7 +1,6 @@
 import objectLang from './layout';
 import drawStartPage from './startPage';
 
-
 function redrawButtons(keyboard, lang) {
   const buttons = keyboard.querySelectorAll('.button');
   const result = [].concat(...objectLang[lang]);
@@ -13,6 +12,10 @@ function redrawButtons(keyboard, lang) {
 
 window.onload = function load() {
   const { textField, checkboxChoiceLang, keyboardButton } = drawStartPage();
+  const buttons = document.querySelectorAll('button');
+  const arr = [];
+  buttons.forEach(el => arr.push(el.value));
+
   let lang = 'rus';
   checkboxChoiceLang.addEventListener('click', () => {
     lang = 'rus';
@@ -23,6 +26,7 @@ window.onload = function load() {
   });
   window.addEventListener('keypress', (event) => {
     event.preventDefault();
+
     if (event.key === 'Tab') {
       event.preventDefault();
       textField.value += '\t';
@@ -37,6 +41,8 @@ window.onload = function load() {
         checkboxChoiceLang.checked = false;
         redrawButtons(keyboardButton, lang);
       }
+      const indexButtonClick = arr.findIndex(el => el === event.key);
+      buttons[indexButtonClick].style.color = 'red';
       textField.value += event.key;
     }
   });
