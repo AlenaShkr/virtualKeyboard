@@ -42,7 +42,8 @@ window.onload = function load() {
         redrawButtons(keyboardButton, lang);
       }
       const indexButtonClick = arr.findIndex(el => el === event.key);
-      buttons[indexButtonClick].style.color = 'red';
+      buttons[indexButtonClick].className = 'button clicked';
+      setTimeout(() => { buttons[indexButtonClick].className = 'button'; }, 700);
       textField.value += event.key;
     }
   });

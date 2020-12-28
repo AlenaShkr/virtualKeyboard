@@ -41,6 +41,9 @@ body {
   outline-style: inset;
   animation: flyBorder 0.5s ease-out infinite;
 }
+.button.clicked {
+  background-color: teal;
+}
   
   @keyframes fly {
     20% {
