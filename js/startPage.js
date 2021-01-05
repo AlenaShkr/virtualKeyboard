@@ -32,6 +32,9 @@ function drawStartPage() {
   sectionChoiceLang.appendChild(checkboxChoiceLang);
   sectionChoiceLang.appendChild(labelForCheckbox);
   keyboard.appendChild(sectionChoiceLang);
+  const choiceTheme = document.createElement('button');
+  choiceTheme.className = 'choice-theme-button';
+  keyboard.appendChild(choiceTheme);
 
   const lang = 'rus';
 

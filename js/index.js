@@ -54,4 +54,16 @@ window.onload = function load() {
       textField.value += event.toElement.value;
     });
   });
+  const choiceThemeButton = document.querySelector('.choice-theme-button');
+  let colorBackground = window.getComputedStyle(document.body).getPropertyValue('background-color');
+  choiceThemeButton.addEventListener('click', () => {
+    colorBackground = window.getComputedStyle(document.body).getPropertyValue('background-color');
+    if (colorBackground !== 'rgb(0, 0, 0)') {
+      document.body.style.backgroundColor = 'black';
+      choiceThemeButton.style.backgroundColor = 'whitesmoke';
+    } else {
+      document.body.style.backgroundColor = 'white';
+      choiceThemeButton.style.backgroundColor = 'rgb(32, 32, 59)';
+    }
+  });
 };

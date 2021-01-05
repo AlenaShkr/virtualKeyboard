@@ -2,6 +2,7 @@ body {
     font-family: sans-serif;
   }
   .keyboard {
+    position: relative;
     width: 75%;
     height: 25vh;
     padding: 15px;
@@ -70,6 +71,28 @@ body {
   
     background: gray;
     color: white;
+  }
+
+  .choice-theme-button {
+    position: absolute;
+    right: 5%;
+    top: 8%;
+    width: 10px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgb(32, 32, 59);
+    border: 0px;
+  }
+  .choice-theme-button:focus {
+    outline-style: none;
+  }
+
+  .choice-theme-button::before {
+    content: 'theme';
+    position: relative;
+    right: 52px;
+    bottom: 4px;
+    color: gray;
   }
   
   /* slider checkbox */
