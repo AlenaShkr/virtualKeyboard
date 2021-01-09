@@ -2,7 +2,7 @@ import objectLang from './layout';
 
 function drawButtons(keyboard, lang) {
   for (let i = 0; i < 5; i += 1) {
-    for (let j = 0; j < 14; j += 1) {
+    for (let j = 0; j < 18; j += 1) {
       const btn = document.createElement('button');
       btn.className = 'button';
 
