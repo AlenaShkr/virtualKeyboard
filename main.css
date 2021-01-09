@@ -13,7 +13,7 @@ body {
   .keyboard-buttons {
     display: grid;
     grid-template-rows: repeat(5, 1fr);
-    grid-template-columns: repeat(73, 1fr);
+    grid-template-columns: repeat(65, 1fr);
   
     width: 100%;
     height: 85%;
@@ -45,6 +45,32 @@ body {
 }
 .button.clicked {
   background-color: teal;
+}
+.button_125 {
+  background: greenyellow;
+  grid-area: span 1 / span 5;
+}
+.button_twice {
+  grid-area: span 2 / span 4;
+}
+
+.button_150 {
+  grid-area: span 1 / span 6;
+  background: palevioletred;
+}
+.button_175 {
+  grid-area: span 1 / span 7;
+  background: palevioletred;
+}
+
+.button_200 {
+  grid-area: span 1 / span 8;
+  background: palevioletred;
+}
+
+.button_500 {
+  grid-area: span 1 / span 20;
+  background: palevioletred;
 }
   
   @keyframes fly {
