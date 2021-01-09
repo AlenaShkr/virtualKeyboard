@@ -1,15 +1,15 @@
 import objectLang from './layout';
 
 function drawButtons(keyboard, lang) {
-  for (let i = 0; i < 5; i += 1) {
-    for (let j = 0; j < 18; j += 1) {
-      const btn = document.createElement('button');
-      btn.className = 'button';
+  const array = [].concat(...objectLang[lang]);
+  const len = array.length;
+  for (let j = 0; j < len; j += 1) {
+    const btn = document.createElement('button');
+    btn.className = 'button';
 
-      btn.innerHTML = objectLang[lang][i][j];
-      btn.value = objectLang[lang][i][j];
-      keyboard.appendChild(btn);
-    }
+    btn.innerHTML = array[j];
+    btn.value = array[j];
+    keyboard.appendChild(btn);
   }
 }
 
