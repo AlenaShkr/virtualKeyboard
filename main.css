@@ -19,6 +19,14 @@ body {
     height: 85%;
     margin-top: 5px; 
   }
+  .functional-button {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2px;
+  }
   
   .button {
     grid-area: span 1/ span 4;

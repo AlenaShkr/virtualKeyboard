@@ -1,14 +1,21 @@
 import objectLang from './layout';
 
-function drawButtons(keyboard, lang) {
-  const array = [].concat(...objectLang[lang]);
+function drawButtons(keyboard, arr, lang) {
+  const array = [].concat(...arr);
   const len = array.length;
   for (let j = 0; j < len; j += 1) {
     const btn = document.createElement('button');
     btn.className = 'button';
-
-    btn.innerHTML = array[j];
-    btn.value = array[j];
+    if (array[j].size === '1.25') {
+      btn.className += ' button_125';
+    }
+    if (array[j].size === '1.5') {
+      btn.className += ' button_150';
+    }
+    if (array[j].value[lang] === undefined) {
+      btn.innerHTML = array[j].value;
+    } else btn.innerHTML = array[j].value[lang];
+    btn.value = array[j].code;
     keyboard.appendChild(btn);
   }
 }
@@ -36,12 +43,16 @@ function drawStartPage() {
   choiceTheme.className = 'choice-theme-button';
   keyboard.appendChild(choiceTheme);
 
-  const lang = 'rus';
-
-  drawButtons(keyboardButton, lang);
-  keyboard.appendChild(keyboardButton);
-  document.body.appendChild(keyboard);
-
+  const lang = 'ru';
+  if (window.document.body.clientWidth >= 1000) {
+    const divFunctButton = document.createElement('div');
+    divFunctButton.className = 'functional-button';
+    drawButtons(divFunctButton, objectLang.functionalButton);
+    drawButtons(keyboardButton, objectLang.common, lang);
+    keyboard.appendChild(divFunctButton);
+    keyboard.appendChild(keyboardButton);
+    document.body.appendChild(keyboard);
+  }
   return { textField, checkboxChoiceLang, keyboardButton };
 }
 

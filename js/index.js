@@ -32,26 +32,29 @@ window.onload = function load() {
       textField.value += '\t';
     }
     if (event.key !== 'Control' && 'Shift' && 'Tab') {
-      if (event.key.charCodeAt(0) < 1040 && lang === 'rus') {
-        lang = 'eng';
-        checkboxChoiceLang.checked = true;
-        redrawButtons(keyboardButton, lang);
-      } else if (event.key.charCodeAt(0) >= 1040 && lang === 'eng') {
-        lang = 'rus';
-        checkboxChoiceLang.checked = false;
-        redrawButtons(keyboardButton, lang);
-      }
-      const indexButtonClick = arr.findIndex(el => el === event.key);
-      buttons[indexButtonClick].className = 'button clicked';
-      setTimeout(() => { buttons[indexButtonClick].className = 'button'; }, 700);
-      textField.value += event.key;
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        textField.value += '\n';
+      } else textField.value += event.key;
+      // // if (event.key.charCodeAt(0) < 1040 && lang === 'rus') {
+      // //   lang = 'eng';
+      // //   checkboxChoiceLang.checked = true;
+      // //   redrawButtons(keyboardButton, lang);
+      // // } else if (event.key.charCodeAt(0) >= 1040 && lang === 'eng') {
+      // //   lang = 'rus';
+      // //   checkboxChoiceLang.checked = false;
+      // //   redrawButtons(keyboardButton, lang);
+      // // }
+      // const indexButtonClick = arr.findIndex(el => el === event.key);
+      // buttons[indexButtonClick].className = 'button clicked';
+      // setTimeout(() => { buttons[indexButtonClick].className = 'button'; }, 700);
     }
   });
 
   const btn = document.querySelectorAll('button');
   btn.forEach((el) => {
     el.addEventListener('click', (event) => {
-      textField.value += event.toElement.value;
+      textField.value += event.toElement.textContent;
     });
   });
   const choiceThemeButton = document.querySelector('.choice-theme-button');

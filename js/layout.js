@@ -11,6 +11,61 @@ const valueKeyRus = [
   ['caps', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'ent', '', '4', '5', '6', ''],
   ['shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '.', 'shift', '', 'up', '1', '2', '3', 'enter'],
   ['ctrl', 'fn', 'win', 'alt', 'gap', 'alt', 'list', 'ctl', '', '', '', '<-', 'down', '->', '0', '.', '']];
+const functionalButton = [
+  {
+    code: 'Escape',
+    value: 'Esc',
+  },
+  {
+    code: 'F1',
+    value: 'F1',
+  },
+  {
+    code: 'F2',
+    value: 'F2',
+  },
+  {
+    code: 'F3',
+    value: 'F3',
+  },
+  {
+    code: 'F4',
+    value: 'F4',
+  },
+  {
+    code: 'F5',
+    value: 'F5',
+  },
+  {
+    code: 'F6',
+    value: 'F6',
+  },
+  {
+    code: 'F7',
+    value: 'F7',
+  },
+  {
+    code: 'F8',
+    value: 'F8',
+  },
+  {
+    code: 'F9',
+    value: 'F9',
+  },
+  {
+    code: 'F10',
+    value: 'F10',
+  },
+  {
+    code: 'F11',
+    value: 'F11',
+  },
+  {
+    code: 'F12',
+    value: 'F12',
+  },
+];
+
 const common = [{
   code: 'Backquote',
   value: {
@@ -260,84 +315,12 @@ const common = [{
   size: '1.5',
 },
 ];
-const keyboard = document.createElement('div');
-keyboard.className = 'keyboard';
-const keyboardButton = document.createElement('div');
-keyboardButton.className = 'keyboard-buttons';
-keyboard.appendChild(keyboardButton);
-document.body.appendChild(keyboard);
-const len = common.length;
-for (let j = 0; j < len; j += 1) {
-  const btn = document.createElement('button');
-  btn.className = 'button';
-  if (common[j].size === '1.25') {
-    btn.className += ' button_125';
-  }
-  if (common[j].size === '1.5') {
-    btn.className += ' button_150';
-  }
-  btn.innerHTML = common[j].value.eng;
-  btn.value = common[j].code;
-  keyboardButton.appendChild(btn);
-}
-
-// const common = [
-//   {'key' : '0',
-//     'code': '0',
-//       'engvalue': '0'},
-//   {'key' : '1',
-//   'code': '1'},
-//   {'key' : '2',
-//   'code': '2'},
-//   {'key' : '3',
-//   'code': '3'},
-//   {'key' : '4',
-//   'code': '4'},
-//   {'key' : '5',
-//   'code': '5'},
-//   {'key' : '6',
-//     'code': '6'},
-//   {'key' : '7',
-//   'code': '7'},
-//   {'key' : '8',
-//   'code': '8'},
-//   {'key' : '9',
-//   'code': '9'},
-//   {'key' : 'Esc',
-//   'code': 'Escape'},
-//   {'key' : 'Backspase',
-//   'code': 'Backspase'},
-//   {'key' : 'Tab',
-//     'code': 'Tab'},
-//   {'key' : '-',
-//   'code': '-'},
-//   {'key' : '=',
-//   'code': '='},
-//   {'key' : '/\\',
-//   'code': '/\\'},
-//   {'key' : 'Caps Lock',
-//   'code': 'CapsLock'},
-//   {'key' : 'Shift',
-//   'code': 'Shift'},
-//   {'key' : 'Ctrl',
-//     'code': 'Control'},
-//   {'key' : 'Win',
-//   'code': 'Meta'},
-//   {'key' : 'Alt',
-//   'code': 'Alt'},
-//   {'key' : 'пробел',
-//   'code': ''},
-//   {'key' : 'Enter',
-//   'code': 'Enter'},
-//   {'key' : 'Menu',
-//   'code': 'ContextMenu'},
-//   {'key' : 'Print Screen',
-//   'code': 'PrintScreen'}
-// ];
 
 const objectLang = {
   eng: valueKeyEng,
   rus: valueKeyRus,
+  common,
+  functionalButton,
 };
 
 export default objectLang;
