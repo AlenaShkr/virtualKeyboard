@@ -44,15 +44,20 @@ function drawStartPage() {
   keyboard.appendChild(choiceTheme);
 
   const lang = 'ru';
-  if (window.document.body.clientWidth >= 1000) {
+  const widthScreen = window.document.body.clientWidth;
+  if (widthScreen >= 1000) {
     const divFunctButton = document.createElement('div');
     divFunctButton.className = 'functional-button';
     drawButtons(divFunctButton, objectLang.functionalButton);
     drawButtons(keyboardButton, objectLang.common, lang);
     keyboard.appendChild(divFunctButton);
-    keyboard.appendChild(keyboardButton);
-    document.body.appendChild(keyboard);
   }
+  if (widthScreen <= 1000 && widthScreen > 420) {
+    drawButtons(keyboardButton, objectLang.common, lang);
+  }
+  keyboard.appendChild(keyboardButton);
+  document.body.appendChild(keyboard);
+
   return { textField, checkboxChoiceLang, keyboardButton };
 }
 
